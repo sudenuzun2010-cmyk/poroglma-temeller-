@@ -1,0 +1,2 @@
+# poroglma-temeller-
+ödev için 
