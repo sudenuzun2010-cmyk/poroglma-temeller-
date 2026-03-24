@@ -1,0 +1,234 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "scratchpad",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/sudenuzun2010-cmyk/poroglma-temeller-/blob/main/poraglamlama%20temeller%C4%B1%20performans%20odev%C4%B1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "lIYdn1woOS1n"
+      },
+      "cell_type": "markdown",
+      "source": [
+        "# Hello"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "ykldCVAWT0Xl"
+      },
+      "cell_type": "code",
+      "source": [],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "a2785121",
+        "outputId": "79b99857-43a4-4999-d093-bf3e15223ad5"
+      },
+      "source": [
+        "def yıl(yil):\n",
+        "    if yil == 2023:\n",
+        "        print(\"yıl artık 2023\")\n",
+        "    else:\n",
+        "        print(f\"Girilen yıl {yil}, istenen 2023 değil.\")\n",
+        "\n",
+        "yıl(2023)\n",
+        "#soru11"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "yıl artık 2023\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "b9f6234d",
+        "outputId": "a3b8f73c-3d75-4607-c364-90bb8267eec5"
+      },
+      "source": [
+        "#soru31\n",
+        "vize = int(input(\"Vize notunuzu girin: \"))\n",
+        "final = int(input(\"Final notunuzu girin: \"))\n",
+        "ortalama = (vize * 0.4) + (final * 0.6)\n",
+        "print(f\"Ortalamanız: {ortalama:.2f}\")\n",
+        "\n",
+        "if ortalama >= 50:\n",
+        "    print(\"Tebrikler, dersi geçtiniz!\")\n",
+        "else:\n",
+        "    print(\"Maalesef, dersten kaldınız.\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Vize notunuzu girin: 90\n",
+            "Final notunuzu girin: 85\n",
+            "Ortalamanız: 87.00\n",
+            "Tebrikler, dersi geçtiniz!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0efb0a5d",
+        "outputId": "3904da7f-5aee-47dc-f35c-d3887df7d0c9"
+      },
+      "source": [
+        "#soru51\n",
+        "import re\n",
+        "\n",
+        "def sifre_gucluluk_kontrolu(sifre_input):\n",
+        "    uzunluk_kriteri = len(sifre_input) >= 8\n",
+        "    kucuk_harf_kriteri = re.search(r'[a-z]', sifre_input)\n",
+        "    buyuk_harf_kriteri = re.search(r'[A-Z]', sifre_input)\n",
+        "    rakam_kriteri = re.search(r'[0-9]', sifre_input)\n",
+        "    ozel_karakter_kriteri = re.search(r'[^a-zA-Z0-9]', sifre_input)\n",
+        "\n",
+        "    puan = 0\n",
+        "    if uzunluk_kriteri: puan += 1\n",
+        "    if kucuk_harf_kriteri: puan += 1\n",
+        "    if buyuk_harf_kriteri: puan += 1\n",
+        "    if rakam_kriteri: puan += 1\n",
+        "    if ozel_karakter_kriteri: puan += 1\n",
+        "\n",
+        "    if puan == 5:\n",
+        "        return \"Güçlü\"\n",
+        "    elif puan >= 3:\n",
+        "        return \"Orta\"\n",
+        "    else:\n",
+        "        return \"Zayıf\"\n",
+        "\n",
+        "sifre_girisi = input(\"Lütfen bir şifre girin: \")\n",
+        "gucluluk = sifre_gucluluk_kontrolu(sifre_girisi)\n",
+        "print(f\"Şifre gücü: {gucluluk}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Lütfen bir şifre girin: suden<|\n",
+            "Şifre gücü: Zayıf\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "574e8970",
+        "outputId": "96d14b4a-9ce0-41bd-c830-efcf46d0a886"
+      },
+      "source": [
+        "#soru71\n",
+        "liste = [12, 9, 8]\n",
+        "ters_liste = liste[::-1]\n",
+        "print(f\"Orijinal liste: {liste}\")\n",
+        "print(f\"Tersine çevrilmiş liste: {ters_liste}\")\n",
+        "\n",
+        "liste2 = [\"elma\", \"armut\", \"çilek\"]\n",
+        "ters_liste2 = liste2[::-1]\n",
+        "print(f\"\\nOrijinal liste: {liste2}\")\n",
+        "print(f\"Tersine çevrilmiş liste: {ters_liste2}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Orijinal liste: [12, 9, 8]\n",
+            "Tersine çevrilmiş liste: [8, 9, 12]\n",
+            "\n",
+            "Orijinal liste: ['elma', 'armut', 'çilek']\n",
+            "Tersine çevrilmiş liste: ['çilek', 'armut', 'elma']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4c63b3e8",
+        "outputId": "98809bd1-7533-41ab-b6f7-559b848e2df2"
+      },
+      "source": [
+        "sayi = int(input(\"Çarpım tablosunu görmek istediğiniz sayıyı girin: \"))\n",
+        "print(f\"{sayi} için çarpım tablosu:\")\n",
+        "for i in range(1, 11):\n",
+        "    print(f\"{sayi} x {i} = {sayi * i}\")\n",
+        "#soru91"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Çarpım tablosunu görmek istediğiniz sayıyı girin: 6\n",
+            "6 için çarpım tablosu:\n",
+            "6 x 1 = 6\n",
+            "6 x 2 = 12\n",
+            "6 x 3 = 18\n",
+            "6 x 4 = 24\n",
+            "6 x 5 = 30\n",
+            "6 x 6 = 36\n",
+            "6 x 7 = 42\n",
+            "6 x 8 = 48\n",
+            "6 x 9 = 54\n",
+            "6 x 10 = 60\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
